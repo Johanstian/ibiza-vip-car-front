@@ -1,0 +1,7 @@
+{
+  "name": "ibiza-vip-car-front",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
