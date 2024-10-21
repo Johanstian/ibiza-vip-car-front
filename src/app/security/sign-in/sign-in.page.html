@@ -1,0 +1,58 @@
+<ion-content scrollY="false">
+  <div>
+    <ion-grid class="m-5 text-center">
+      <!-- <img alt="connectUp" src="../../../assets/logo.png" /> -->
+       <br>
+       <h1>Ibiza Vip Car</h1>
+       <small>Experience Ibiza in luxury VIP Car transfers</small>
+       <br>
+    </ion-grid>
+    <ion-grid class="mt-5">
+      <form [formGroup]="signInForm">
+        <ion-list>
+          <ion-item lines="full">
+            <ion-icon slot="start" name="person-circle-outline" color="primary"></ion-icon>
+            <ion-input class="light-color ms-2" label="User" labelPlacement="stacked" formControlName="email"></ion-input>
+          </ion-item>
+
+          <ion-item lines="full">
+            <ion-icon slot="start" name="lock-closed" color="primary"></ion-icon>
+            <ion-input class="light ms-2" label="Password" labelPlacement="stacked" type="password"
+              formControlName="password">
+              <ion-input-password-toggle slot="end" color="primary"></ion-input-password-toggle>
+            </ion-input>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-grid>
+    <br>
+
+    <ion-grid class="mt-5">
+      <ion-row>
+        <ion-col>
+          <ion-button class="b-s" expand="full" [disabled]="signInForm.invalid || loading"
+            (click)="login()">
+            <ion-spinner *ngIf="loading" name="bubbles" color="dark"></ion-spinner>
+            Sign in
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="ion-text-center mt-2">
+          <ion-button fill="clear" [routerLink]="['/security/sign-up']">Don't have an account ? Sign up here
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <br>
+      <br>
+      <br>
+      <br>
+      <ion-row>
+        <div class="col mt-5 ion-text-center">
+          <small>Johan López - 2024</small>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

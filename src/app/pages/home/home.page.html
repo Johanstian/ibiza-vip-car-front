@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="primary">Home</ion-title>
+    <ion-button routerLink="/routes/account/notification" fill="clear" slot="end">
+      <ion-icon name="notifications"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <h1 class="t-s">Hola, <strong>{{user?.name}}</strong></h1>
+  </div>
+
+  <div class="container mt-5">
+    <swiper-container autoplay-delay="3000" slides-per-view="1" #newSwiper>
+      <swiper-slide>
+        <ion-card class="h-card">
+          <ion-card-header class="h-card-head">
+            <ion-card-title>
+              <div class="h-title">
+                <img src="assets/ibiza1.avif" alt="" style="height: 280px; width: 100%;">
+              </div>
+            </ion-card-title>
+          </ion-card-header>
+
+
+          <ion-card-footer style="float: right;">
+            <div class="h-card-foot">
+              <small class="ml-5 light"><span style="font-weight: 300;">Fecha:
+                </span>20-03-1986</small>
+            </div>
+          </ion-card-footer>
+        </ion-card>
+      </swiper-slide>
+      <swiper-slide>
+        <ion-card class="h-card">
+          <ion-card-header class="h-card-head">
+            <ion-card-title>
+              <div class="h-title">
+                <img src="assets/ibiza2.jpg" alt="" style="height: 280px; width: 100%;">
+              </div>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-footer style="float: right;">
+            <div class="h-card-foot">
+              <ion-icon name="time-outline" color="light"></ion-icon>
+              <small class="ml-5 light"><span style="font-weight: 300; width: 100%;">Fecha:
+                </span>20-03-1986</small>
+            </div>
+          </ion-card-footer>
+        </ion-card>
+      </swiper-slide>
+      <swiper-slide>
+        <ion-card class="h-card">
+          <ion-card-header class="h-card-head">
+            <ion-card-title>
+              <div class="h-title">
+                <img src="assets/ibiza3.avif" alt="" style="height: 280px; width: 100%;">
+              </div>
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-footer style="float: right;">
+            <div class="h-card-foot">
+              <ion-icon name="time-outline" color="light"></ion-icon>
+              <small class="ml-5 light"><span style="font-weight: 300;">Fecha:
+                </span>20-03-1986</small>
+            </div>
+          </ion-card-footer>
+        </ion-card>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+ 
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- <ion-title color="primary">Home</ion-title> -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pages/account" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-grid>
+      <h1 class="text-center t-s">Profile</h1>
+    </ion-grid>
+  
+    <ion-grid>
+        <form [formGroup]="userForm">
+
+            <ion-item class="mt-4" lines="full">
+              <ion-input class="t-s" label="Nombres" labelPlacement="floating" placeholder="Nombres..." formControlName="name">
+              </ion-input>
+            </ion-item>
+            <!-- <div *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+              <p class="error-text">Este campo es obligatorio.</p>
+            </div> -->
+  
+            <ion-item class="mt-4" lines="full">
+              <ion-input class="t-s" label="Apellidos" labelPlacement="floating" placeholder="Apellidos..."
+                formControlName="lastName">
+              </ion-input>
+            </ion-item>
+            <!-- <div *ngIf="userForm.get('lastName')?.touched && userForm.get('lastName')?.invalid">
+              <p class="error-text">Este campo es obligatorio.</p>
+            </div> -->
+  
+            <ion-item class="mt-4" lines="full">
+              <ion-input class="t-s" label="Email" labelPlacement="floating" placeholder="Email..." formControlName="email">
+              </ion-input>
+            </ion-item>
+            <!-- <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid"></div> -->
+  
+            <div class="mt-5 text-center">
+              <ion-button class="b-s" expand="full" color="primary" (click)="updateUser()">Update</ion-button>
+            </div>
+
+        </form>
+    </ion-grid>
+  </div>
+
+</ion-content>

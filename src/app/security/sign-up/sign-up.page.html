@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="" text="" [routerLink]="['/']"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scrollY="false">
+
+
+
+  <ion-card *ngIf="currentSection === 1">
+    <ion-card-content>
+      <form [formGroup]="signUpForm">
+        <ion-list>
+          <ion-item lines="none">
+            <h1>Info</h1>
+          </ion-item>
+
+          <ion-item class="mt-4" lines="full">
+            <ion-input label="Names" labelPlacement="floating" placeholder="Names..." formControlName="name">
+            </ion-input>
+          </ion-item>
+          <div *ngIf="signUpForm.get('nombres')?.touched && signUpForm.get('nombres')?.invalid">
+            <p class="error-text">Este campo es obligatorio.</p>
+          </div>
+
+          <ion-item class="mt-4" lines="full">
+            <ion-input label="Last names" labelPlacement="floating" placeholder="Last names..."
+              formControlName="lastName">
+            </ion-input>
+          </ion-item>
+          <div *ngIf="signUpForm.get('apellidos')?.touched && signUpForm.get('apellidos')?.invalid">
+            <p class="error-text">Este campo es obligatorio.</p>
+          </div>
+
+          <ion-item class="mt-4" lines="full">
+            <ion-input label="Email" labelPlacement="floating" placeholder="Email..." formControlName="email">
+            </ion-input>
+          </ion-item>
+          <div *ngIf="signUpForm.get('email')?.touched && signUpForm.get('email')?.invalid">
+          </div>
+
+          <div class="mt-5 text-center">
+            <ion-button color="light" (click)="goToSection(2)"> ></ion-button>
+          </div>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="currentSection === 2">
+    <ion-card-content>
+      <form [formGroup]="signUpForm">
+        <ion-list>
+          <ion-item lines="none">
+            <h1></h1>
+          </ion-item>
+
+          <ion-item class="mt-4" lines="full">
+            <ion-input label="Password" labelPlacement="floating" placeholder="Password..."
+              formControlName="password"></ion-input>
+          </ion-item>
+
+          <ion-item class="mt-4" lines="full">
+            <ion-input label="Confirm" labelPlacement="floating" placeholder="Confirm password..."></ion-input>
+          </ion-item>
+
+          <div class="mt-4 text-center">
+            <ion-button color="light" fill="outline" (click)="goToSection(1)">Back</ion-button>
+            <ion-button color="light ms-1" (click)="createUser()">Create</ion-button>
+          </div>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
