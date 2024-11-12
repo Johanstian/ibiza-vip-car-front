@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+   renderUrl: 'https://ibiza-vip-car-back-1.onrender.com',
+  localUrl: 'http://localhost:3000/api'
 };

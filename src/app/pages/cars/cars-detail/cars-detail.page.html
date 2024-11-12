@@ -1,58 +1,62 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-button (click)="closeModal()" fill="clear" slot="start">
-      <ion-icon name="close-sharp"></ion-icon>
-    </ion-button>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title color="primary">{{carData.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card *ngIf="carData">
-    <img src="assets/v220.png" alt="">
-    <ion-card-header>
-      <ion-card-title>{{carData.model}}</ion-card-title>
-      <ion-card-subtitle color="primary">{{carData.model}}</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      The V-Class series is a luxury minivan that offers a high level of comfort and passenger space.
-    </ion-card-content>
-  </ion-card>
+  <div class="container">
+    <ion-card *ngIf="carData">
+      <img src="assets/v220.png" alt="">
+      <ion-card-header>
+        <ion-card-title>{{carData.model}}</ion-card-title>
+        <ion-card-subtitle color="primary">{{carData.model}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        The V-Class series is a luxury minivan that offers a high level of comfort and passenger space.
+      </ion-card-content>
+    </ion-card>
 
-  <ion-row>
-    <ion-col size="6" style="display: flex; justify-content: center; text-align: center">
-      <ion-card style="width: calc(100% - 10px); height: calc(100% - 10px);">
-        <ion-card-content style="display: flex; flex-direction: column; height: 100%;">
-          <strong style="margin-bottom: auto;">6</strong>
-          <strong style="margin-top: auto;">Seats</strong>
-        </ion-card-content>
-      </ion-card>      
-    </ion-col>
-    <ion-col size="6" style="display: flex; justify-content: center; text-align: center">
-      <ion-card style="width: calc(100% - 10px); height: calc(100% - 10px);">
-        <ion-card-content style="display: flex; flex-direction: column; height: 100%;">
-          <strong style="margin-bottom: auto;">5</strong>
-          <strong style="margin-top: auto;">Doors</strong>
-        </ion-card-content>
-      </ion-card>      
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col size="6" style="display: flex; justify-content: center; text-align: center">
-      <ion-card style="width: calc(100% - 10px); height: calc(100% - 10px);">
-        <ion-card-content style="display: flex; flex-direction: column; height: 100%;">
-          <strong style="margin-bottom: auto;">6</strong>
-          <strong style="margin-top: auto;">Seats</strong>
-        </ion-card-content>
-      </ion-card>      
-    </ion-col>
-    <ion-col size="6" style="display: flex; justify-content: center; text-align: center">
-      <ion-card style="width: calc(100% - 10px); height: calc(100% - 10px);">
-        <ion-card-content style="display: flex; flex-direction: column; height: 100%;">
-          <strong style="margin-bottom: auto;">5</strong>
-          <strong style="margin-top: auto;">Doors</strong>
-        </ion-card-content>
-      </ion-card>      
-    </ion-col>
-  </ion-row>
+    <ion-row>
+      <ion-col size="6" style="display: flex; justify-content: center; text-align: center">
+        <ion-card style="width: calc(100% - 10px); height: calc(100% - 10px);">
+          <ion-card-content style="display: flex; flex-direction: column; height: 100%;">
+            <strong style="margin-bottom: auto;">6</strong>
+            <strong style="margin-top: auto;">Seats</strong>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" style="display: flex; justify-content: center; text-align: center">
+        <ion-card style="width: calc(100% - 10px); height: calc(100% - 10px);">
+          <ion-card-content style="display: flex; flex-direction: column; height: 100%;">
+            <strong style="margin-bottom: auto;">5</strong>
+            <strong style="margin-top: auto;">Doors</strong>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" style="display: flex; justify-content: center; text-align: center">
+        <ion-card style="width: calc(100% - 10px); height: calc(100% - 10px);">
+          <ion-card-content style="display: flex; flex-direction: column; height: 100%;">
+            <strong style="margin-bottom: auto;">6</strong>
+            <strong style="margin-top: auto;">Seats</strong>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" style="display: flex; justify-content: center; text-align: center">
+        <ion-card style="width: calc(100% - 10px); height: calc(100% - 10px);">
+          <ion-card-content style="display: flex; flex-direction: column; height: 100%;">
+            <strong style="margin-bottom: auto;">5</strong>
+            <strong style="margin-top: auto;">Doors</strong>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>

@@ -8,98 +8,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <form [formGroup]="requestForm">
-    <div class="padre">
-      <div id="map" class="full"></div>
-    </div>
-    <ion-row>
-      <ion-col>
-        <ion-label for="origin">Origin</ion-label>
-        <input type="text" formControlName="origin" placeholder="" id="origin"
-          [ngClass]="{ 'status-danger': isValid('origin', true) }" [(ngModel)]="origin" #inputfield />
-        <ng-container *ngIf="isValid('origin', true)">
-          <ion-note *ngIf="getControl('destination').errors?.required" color="danger">Required</ion-note>
-        </ng-container>
-      </ion-col>
-    </ion-row>
+  
+  <div>
+    <form [formGroup]="serviceForm">
 
-    <ion-row style="display: content">
-      <ion-col>
-        <ion-label class="pc-ic" for="destination">Destination</ion-label>
-        <input type="text" formControlName="destination" placeholder="" id="destination"
-          [ngClass]="{ 'status-danger': isValid('destination', true) }" [(ngModel)]="destination" #inputfield2 />
-        <ng-container *ngIf="isValid('destination', true)">
-          <ion-note *ngIf="getControl('destination').errors?.required" color="danger">Required</ion-note>
-        </ng-container>
-      </ion-col>
-    </ion-row>
+      <ion-item>
+        <ion-label position="floating">Origin</ion-label>
+        <!-- <ion-input type="text" [(ngModel)]="origin" name="origin" required></ion-input> -->
+        <input type="text" formControlName="origin" [(ngModel)]="origin" #inputfield />
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Destination</ion-label>
+        <ion-input type="text" formControlName="destination" [(ngModel)]="destination" name="destination" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Number of Passengers</ion-label>
+        <ion-input type="number" formControlName="passengers" [(ngModel)]="passengers" name="passengers" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Car Type</ion-label>
+        <ion-input type="text" formControlName="carType" [(ngModel)]="carType" name="carType" required></ion-input>
+      </ion-item>
+      <ion-button expand="full" type="submit">Calculate Route</ion-button>
+    </form>
+  </div>
+  <div class="padre">
+    <div id="map" class="full" style="width: 100%; height: 200px;"></div>
+  </div>
 
-    <!-- <ion-row *ngIf="isStimated">
-      <ion-note class="center-title">Time: {{ stimatedTime }} - Distance: {{distanceStimated}}</ion-note>
-    </ion-row> -->
-
-    <ion-row>
-      <ion-col size="6">
-        <ion-label class="center-title pc-ic" for="pickUp">Date</ion-label>
-        <input formControlName="pickUp" type="datetime-local" />
-      </ion-col>
-
-      <ion-col size="6">
-        <ion-label class="center-title pc-ic">Passengers</ion-label>
-        <input type="text" formControlName="passengers" class="form-control" placeholder="" id="passengers"
-          [ngClass]="{ 'status-danger': isValid('passengers', true) }" />
-      </ion-col>
-    </ion-row>
-
-    <ion-grid>
-      <ion-row>
-        <ion-col class="center">
-          <ion-button class="bc-ivc" (click)="properties()" [disabled]="requestForm.invalid">Book</ion-button>
-          <!-- <ion-button *ngIf="!isSubmit" (click)="create()" [disabled]="requestForm.invalid || isSubmit" expand="block">Book</ion-button> -->
-          <ion-button *ngIf="isSubmit" [disabled]=" isSubmit" class="ionic-buttons" id="open-modal" expand="block">
-            <ion-spinner name="crescent"></ion-spinner>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </form>
-
-
-
-  <!-- <ion-button id="open-modal" expand="block">Open</ion-button> -->
-<!--  
-  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
-    <ng-template>
-      <form [formGroup]="requestForm">
-        <ion-header>
-          <ion-toolbar>
-            <ion-buttons slot="start">
-              <ion-button (click)="cancel()">Cancel</ion-button>
-            </ion-buttons>
-            <ion-buttons slot="end">
-              <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content style="height: 99vh;">
-         <ion-row>
-        <ion-col>
-          <ion-label for="origin" class="center">Origin</ion-label>
-          <input type="text" formControlName="origin" placeholder="" id="origin"
-            [ngClass]="{ 'status-danger': isValid('origin', true) }" [(ngModel)]="origin" #inputfield />
-          <ng-container *ngIf="isValid('origin', true)">
-            <ion-note *ngIf="getControl('destination').errors?.required" color="danger">Required</ion-note>
-          </ng-container>
-        </ion-col>
-      </ion-row>
-          <ion-item>
-            <ion-input formControlName="destination" label="Enter your name" labelPlacement="stacked" type="text" placeholder="Your name"
-              [(ngModel)]="name"></ion-input>
-          </ion-item>
-        </ion-content>
-      </form>
-    </ng-template>
-  </ion-modal> -->
 
 </ion-content>
-

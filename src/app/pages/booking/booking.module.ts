@@ -14,7 +14,8 @@ import { BookingPage } from './booking.page';
     FormsModule,
     IonicModule,
     BookingPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [BookingPage]
 })
